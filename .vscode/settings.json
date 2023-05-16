@@ -1,0 +1,18 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "API/bin": true,
+        "API/bin/Debug/net7.0": true,
+        "API/obj": true
+    },
+    "hide-files.files": [
+        "API/bin",
+        "API/bin/Debug/net7.0",
+        "API/obj"
+    ]
+}
