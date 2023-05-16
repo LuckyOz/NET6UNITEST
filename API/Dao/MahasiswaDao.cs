@@ -53,19 +53,27 @@ namespace API.Dao
                 dataOld.created_date = dataUpdate.created_date;
                 dataOld.updated_date = DateTime.UtcNow;
                 dataOld.is_active = true;
+
+                await _context.SaveChangesAsync();
+
+                return true;
             }
 
-            await _context.SaveChangesAsync();
-
-            return true;
+            return false;
         }
 
         public async Task<bool> DeleteMahasiswaById(int id)
         {
-            _context.mahasiswas.Remove(await GetSingleMahasiswaById(id));
-            await _context.SaveChangesAsync();
+            mahasiswa dataOld = await _context.mahasiswas.FindAsync(id);
 
-            return true;
+            if (dataOld != null) {
+                _context.mahasiswas.Remove(await GetSingleMahasiswaById(id));
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

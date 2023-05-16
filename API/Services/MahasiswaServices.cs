@@ -135,6 +135,7 @@ namespace API.Services
 
                 data = new()
                 {
+                    id = dataUpdate.Id,
                     nama = dataUpdate.Nama,
                     alamat = dataUpdate.Alamat,
                     umur = dataUpdate.Umur,
