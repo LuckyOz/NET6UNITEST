@@ -11,7 +11,9 @@ namespace API.Models.Data
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true); //for set timestamp without timezone
         }
 
-        public DbSet<mahasiswa> mahasiswas { get; set; }
+        public MahasiswaContext() { }
+
+        public virtual DbSet<mahasiswa> mahasiswas { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
